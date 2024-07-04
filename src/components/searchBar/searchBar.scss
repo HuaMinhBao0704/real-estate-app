@@ -1,0 +1,112 @@
+@import "../../responsive.scss";
+
+.search__bar {
+  .type {
+    @include sm {
+      // margin-bottom: 5px;
+    }
+
+    button {
+      padding: 16px 36px;
+      border: 1px solid var(--secondary-light-color);
+      text-transform: capitalize;
+      cursor: pointer;
+      border-bottom: none;
+      background-color: var(--primary-light-color);
+
+      &:hover {
+        background-color: var(--hover-btn-color);
+      }
+
+      &.active {
+        background-color: var(--primary-dark-color);
+        color: var(--primary-light-color);
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+
+        @include sm {
+          // border-bottom: 1px solid var(--secondary-light-color);
+          // border-bottom-left-radius: 5px;
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+
+        @include sm {
+          // border-bottom: 1px solid var(--secondary-light-color);
+          // border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
+
+  form {
+    border: 1px solid var(--secondary-light-color);
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    gap: 5px;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      padding: 0px 10px;
+      width: 200px;
+
+      @include lg {
+        padding: 0px 5px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+
+      @include md {
+        width: 200px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include sm {
+        width: auto;
+        padding: 20px;
+        border: 1px solid var(--secondary-light-color);
+        // border-radius: 5px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+        }
+      }
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: var(--yellow-color);
+      flex: 1;
+
+      @include sm {
+        padding: 10px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

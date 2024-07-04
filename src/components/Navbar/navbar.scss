@@ -1,3 +1,5 @@
+@import "../../responsive.scss";
+
 .nav {
   height: 100px;
   display: flex;
@@ -6,6 +8,10 @@
 
   a {
     transition: all 400ms ease;
+
+    @include sm {
+      display: none;
+    }
 
     &:hover {
       scale: 1.05;
@@ -28,6 +34,18 @@
       img {
         width: 28px;
       }
+
+      @include md {
+        span {
+          display: none;
+        }
+      }
+
+      @include sm {
+        span {
+          display: initial;
+        }
+      }
     }
   }
 
@@ -36,8 +54,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background: #FCF5F3;
+    background: var(--right-col-color);
     height: 100%;
+
+    @include md {
+      background-color: transparent;
+    }
 
     a {
       padding: 12px 24px;
@@ -45,7 +67,47 @@
     }
 
     .register__btn {
-      background-color: #fece51;
+      background-color: var(--yellow-color);
+      border-radius: 5px;
+    }
+
+    .menu__icon {
+      display: none;
+      z-index: 999;
+
+      img {
+        width: 36px;
+        cursor: pointer;
+      }
+
+      @include sm {
+        display: inline;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      height: 100vh;
+      background-color: var(--primary-dark-color);
+      color: var(--primary-light-color);
+      width: 50%;
+      top: 0;
+      right: -50%;
+      transition: all 1s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &.active {
+        right: 0;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+        }
+      }
     }
   }
 }
