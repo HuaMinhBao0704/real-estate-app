@@ -7,7 +7,7 @@ const Single = () => {
     <div className='single__page'>
       <div className='details'>
         <div className='wrapper'>
-          <Slider />
+          <Slider images={singlePostData.images} />
           <div className='info'>
             <div className='top'>
               {/* Post Information */}
