@@ -15,6 +15,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #acacac; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners for the thumb */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #919191; /* Color of the scrollbar thumb on hover */
+  }
 }
 
 a {
