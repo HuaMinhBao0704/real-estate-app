@@ -6,6 +6,7 @@ import {
 import Home from './routes/home';
 import List from './routes/list';
 import Single from './routes/single';
+import Profile from './routes/profile';
 import Layout from './components/layout';
 
 const App = () => {
@@ -25,6 +26,10 @@ const App = () => {
         {
           path: ":id",
           element: <Single />
+        },
+        {
+          path: "/profile",
+          element: <Profile />
         }
       ]
     }

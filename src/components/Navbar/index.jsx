@@ -5,6 +5,7 @@ import './navbar.scss';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const user = true;
 
   return (
     <nav className='nav'>
@@ -19,10 +20,30 @@ const Navbar = () => {
         <a href='#'>Agents</a>
       </div>
       <div className='right'>
-        <Link to='/sign-in'>Sign in</Link>
+        {user ? (
+          <div className='user'>
+            <img
+              src='https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+              alt=''
+            />
+            <span>John Doe</span>
+            <Link to='/profile' className='profile'>
+              <div className='notification'>3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <Link to='/sign-in'>Sign in</Link>
+            <Link to='/sign-up' className='register__btn'>
+              Sign up
+            </Link>
+          </>
+        )}
+        {/* <Link to='/sign-in'>Sign in</Link>
         <Link to='/sign-up' className='register__btn'>
           Sign up
-        </Link>
+        </Link> */}
         <div
           className='menu__icon'
           onClick={() => setOpenMenu((prevState) => !prevState)}

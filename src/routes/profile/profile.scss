@@ -1,0 +1,67 @@
+.profile__page {
+  display: flex;
+  height: 100%;
+
+  .details {
+    flex: 3;
+    overflow-y: auto;
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 300;
+        }
+
+        button {
+          padding: 12px 24px;
+          background-color: var(--yellow-color);
+          cursor: pointer;
+          border: none;
+          transition: all 400ms ease;
+
+          &:hover {
+            scale: 1.05;
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .chat__container {
+    flex: 2;
+    background-color: var(--right-col-color);
+    height: 100%;
+
+    .wrapper {
+
+    }
+  }
+}
